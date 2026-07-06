@@ -1,0 +1,62 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>vzhuh-prototype</title><link rel="stylesheet" href="./css/styles.css"></head><body><div class="tl-settings-page">
+  <div class="tl-page-header">
+    <h1 class="tl-page-title">Настройки</h1>
+    <p class="tl-page-subtitle">Менеджер каналов</p>
+  </div>
+
+  <div class="tl-form-group">
+    <div class="tl-form-item">
+      <div class="tl-checkbox-wrapper">
+        <input type="checkbox" id="otaPrepaymentEnabled" class="tl-checkbox" />
+        <label for="otaPrepaymentEnabled" class="tl-checkbox-label">Управление предоплатами из OTA</label>
+      </div>
+    </div>
+
+    <div id="otaSettings" class="tl-settings-panel" style="display:none;">
+      <div class="tl-form-item">
+        <label class="tl-label">Процент предоплаты</label>
+        <select id="prepaymentPercent" class="tl-select">
+          <option value="0">0%</option>
+          <option value="10" selected>10%</option>
+          <option value="20">20%</option>
+          <option value="30">30%</option>
+          <option value="50">50%</option>
+          <option value="100">100%</option>
+        </select>
+      </div>
+
+      <div class="tl-form-item">
+        <label class="tl-label">Применение к каналам</label>
+        <select id="channelApplication" class="tl-select">
+          <option value="all" selected>Все каналы</option>
+          <option value="select">Выборочно</option>
+        </select>
+      </div>
+
+      <div id="channelList" class="tl-channel-list" style="display:none;">
+        <div class="tl-checkbox-wrapper">
+          <input type="checkbox" id="channel1" class="tl-checkbox" checked />
+          <label for="channel1" class="tl-checkbox-label">Booking.com</label>
+        </div>
+        <div class="tl-checkbox-wrapper">
+          <input type="checkbox" id="channel2" class="tl-checkbox" checked />
+          <label for="channel2" class="tl-checkbox-label">Expedia</label>
+        </div>
+        <div class="tl-checkbox-wrapper">
+          <input type="checkbox" id="channel3" class="tl-checkbox" />
+          <label for="channel3" class="tl-checkbox-label">Airbnb</label>
+        </div>
+        <div class="tl-checkbox-wrapper">
+          <input type="checkbox" id="channel4" class="tl-checkbox" />
+          <label for="channel4" class="tl-checkbox-label">Agoda</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-form-item tl-actions">
+      <button id="saveButton" class="tl-button tl-button-primary">Сохранить</button>
+    </div>
+  </div>
+
+  <div id="notification" class="tl-notification" style="display:none;"></div>
+</div><script src="./js/app.js"></script></body></html>

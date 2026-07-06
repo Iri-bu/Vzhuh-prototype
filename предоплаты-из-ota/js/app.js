@@ -1,1 +1,0 @@
-document.querySelector('[data-action]')?.addEventListener('click',()=>{document.querySelector('[data-result]').textContent='Готово: интерактивное действие прототипа выполнено.'})

@@ -1,0 +1,97 @@
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>vzhuh-prototype</title><link rel="stylesheet" href="./css/styles.css"></head><body><div class="tl-app">
+  <header class="tl-page-header">
+    <h1 class="tl-page-title">Настройки — Менеджер каналов</h1>
+    <div class="tl-header-actions">
+      <button class="tl-button tl-button-primary" onclick="saveSettings()">Сохранить</button>
+    </div>
+  </header>
+  <main class="tl-page-content">
+    <section class="form-group">
+      <h2 class="form-group-title">Основные настройки</h2>
+      <div class="form-item">
+        <label class="form-label">Название отеля</label>
+        <div class="tl-control-text">Отель Тестовый</div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Язык интерфейса</label>
+        <select class="tl-control-select">
+          <option>Русский</option>
+          <option>English</option>
+        </select>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Часовой пояс</label>
+        <select class="tl-control-select">
+          <option>UTC+3 (Москва)</option>
+          <option>UTC+2</option>
+        </select>
+      </div>
+    </section>
+    <section class="form-group">
+      <h2 class="form-group-title">Управление предоплатами из OTA</h2>
+      <div class="form-item">
+        <label class="form-label tl-control-checkbox">
+          <input type="checkbox" id="prepaymentEnabled" onchange="togglePrepaymentFields()" checked />
+          <span class="checkbox-indicator"></span>
+          <span class="checkbox-text">Включить управление предоплатами из каналов OTA</span>
+        </label>
+      </div>
+      <div id="prepaymentFields" class="prepayment-fields">
+        <div class="form-item">
+          <label class="form-label">Тип предоплаты</label>
+          <select class="tl-control-select" id="prepaymentType">
+            <option value="fixed">Фиксированная сумма</option>
+            <option value="percent">Процент от брони</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label class="form-label" id="prepaymentValueLabel">Сумма предоплаты (в валюте отеля)</label>
+          <input type="number" class="tl-control-text" id="prepaymentValue" value="1000" min="0" />
+        </div>
+        <div class="form-item">
+          <label class="form-label">Применять к каналам</label>
+          <div class="tl-control-multiselect">
+            <ul class="tl-multiselect-list">
+              <li><label><input type="checkbox" checked /> Booking.com</label></li>
+              <li><label><input type="checkbox" checked /> Expedia</label></li>
+              <li><label><input type="checkbox" /> Airbnb</label></li>
+              <li><label><input type="checkbox" checked /> Ostrovok</label></li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-item">
+          <label class="form-label tl-control-checkbox">
+            <input type="checkbox" id="applyToAll" />
+            <span class="checkbox-indicator"></span>
+            <span class="checkbox-text">Применять ко всем каналам</span>
+          </label>
+        </div>
+      </div>
+    </section>
+    <section class="form-group">
+      <h2 class="form-group-title">Дополнительно</h2>
+      <div class="form-item">
+        <label class="form-label tl-control-checkbox">
+          <input type="checkbox" />
+          <span class="checkbox-indicator"></span>
+          <span class="checkbox-text">Автоматически подтверждать брони с предоплатой</span>
+        </label>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Максимальный срок предоплаты (дней)</label>
+        <input type="number" class="tl-control-text" value="30" min="1" />
+      </div>
+      <div class="form-item">
+        <label class="form-label tl-control-checkbox">
+          <input type="checkbox" />
+          <span class="checkbox-indicator"></span>
+          <span class="checkbox-text">Отправлять уведомления гостю о предоплате</span>
+        </label>
+      </div>
+    </section>
+    <div class="tl-button-bar">
+      <button class="tl-button tl-button-primary" onclick="saveSettings()">Сохранить настройки</button>
+      <button class="tl-button" onclick="resetSettings()">Сбросить</button>
+    </div>
+  </main>
+</div><script src="./js/app.js"></script></body></html>
